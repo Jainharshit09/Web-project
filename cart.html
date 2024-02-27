@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Birdeye Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Cart</h1>
+  <div class="container">
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+      </tbody>
+    </table>
+    <div class="cart-totals">
+      <h2>Cart Totals</h2>
+      <table>
+        <tr>
+          <th>Subtotal</th>
+          <td id="subtotal"></td>
+        </tr>
+        <tr>
+          <th>Shipping</th>
+          <td>
+            <select id="shipping-method">
+              <option value="199">Flat rate: 199.00</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="shipping-address">
+        <h3>Shipping Address</h3>
+        <input type="text" name="shipping-name" placeholder="Full name" required="required">
+        <input type="text" name="shipping-address-line-1" placeholder="Address line 1" required="required">
+        <input type="text" name= "shipping-address-line-2" placeholder="Address line 2">
+        <input type="text" name="shipping-city" placeholder="City" required="required">
+        <input type="text" name="shipping-state" placeholder="State" required="required">
+        <input type="text" name="shipping-zip" placeholder="ZIP code" required="required">
+      </div>
+      <table>
+        <tr>
+          <th>Coupon code</th>
+          <td><input type="text" id="coupon-code" placeholder="Enter coupon code"> <button id="apply-coupon">Apply coupon</button></td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td><span id="total"></span></td>
+        </tr>
+      </table>
+      <a id="proceed-to-checkout" onclick="redirectToThankYou()">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <script src="assets\js\cart.js"></script>
+  <script>
+    function redirectToThankYou() {
+      var shippingName = document.getElementsByName("shipping-name")[0].value;
+      
+      if (shippingName.trim() !== "") {
+        window.location.href = "thankyou.html";
+      } else {
+        alert("Please fill in the shipping Address.");
+      }
+    }
+  </script>
+</body>
+</html>

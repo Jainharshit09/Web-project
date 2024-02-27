@@ -1,0 +1,123 @@
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 80%;
+    font-size: 50px;
+  }
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+   
+  }
+  
+  .cart-table {
+    width: 50%;
+    height: 200px;
+    margin: 0 auto 25%; 
+    border-collapse: collapse;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+  }
+  
+  .cart-table th,
+  .cart-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 100%;
+    text-align: center;
+  }
+  
+  .cart-totals {
+    width: 40%;
+    margin-top: 20px;
+    margin-right: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+  }
+  
+  .cart-totals h2 {
+    font-size: 20px;
+  }
+  
+  .cart-totals table {
+    width: 100%; 
+    border-collapse: collapse;
+  }
+  
+  .cart-totals table th,
+  .cart-totals table td {
+    border: none;
+    padding: 10px;
+  }
+  
+  #proceed-to-checkout {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .shipping-address {
+    text-align: center; 
+    width: 80%;
+    margin: 10px auto; 
+    padding: 10px;
+    border: 3px solid #565555;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+  }
+  
+  .shipping-address h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .shipping-address input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #2c2a2a;
+  }
+  
+  .left-box {
+    width: 250px;
+    height: 300px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+  }
+  
+  .add-remove-quantity-button {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    background-color: #ccc;
+    cursor: pointer;
+    border-radius: 50%; 
+  }
+  
+  .add-remove-quantity-button:hover {
+    background-color: #ddd;
+  }
+  
+  .add-remove-quantity-button.minus {
+    border-radius: 50%; 
+  }
+  
+  .add-remove-quantity-button.plus {
+    border-radius: 50%; 
+  }
+  #proceed-to-checkout {
+    background-color: #393a3a;
+    color: white;
+    padding: 5px 189.96px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none; 
+  }

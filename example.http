@@ -1,0 +1,7 @@
+
+POST http://localhost:3000/addItem
+Content-Type: application/json
+
+{
+    "cartItems":[]
+}

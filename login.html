@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-height: 100vh;
+            background: rgb(188, 207, 195);
+            border: 2px;
+            overflow: hidden;
+        }
+
+        .login_details {
+            position: absolute;
+            width: 380px;
+            height: 420px;
+            background: rgba(145, 142, 142, 0.797);
+            top: 20%;
+            right: 59%;
+            border-radius: 8px;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .right-side-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: white;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .right-side-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .login_details::before,
+        .login_details::after {
+            content: '';
+            position: absolute;
+            width: 380px;
+            height: 420px;
+            top: -50px;
+            left: -50px;
+            background-size: cover;
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+        }
+
+        .login_details::before {
+            background: url('left-image.jpg') no-repeat;
+        }
+
+        .login_details::after {
+            background: url('right-image.jpg') no-repeat;
+            animation-delay: -3s;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(270deg);
+            }
+        }
+
+        .login_details form {
+            position: absolute;
+            inset: 4px;
+            padding: 50px 40px;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login_details form h1 {
+            color: rgb(107, 64, 64);
+            font-weight: 500;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        .txt_field {
+            position: relative;
+            width: 300px;
+            margin-top: 35px;
+        }
+
+        .txt_field input {
+            position: relative;
+            width: 100%;
+            padding: 20px 10px 10px;
+            background: transparent;
+            outline: none;
+            border: none;
+            box-shadow: none;
+            color: #222223;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transform: 0.5s;
+            z-index: 10;
+        }
+
+        .txt_field span {
+            position: absolute;
+            left: 0;
+            padding: 20px 0px 10px;
+            pointer-events: none;
+            color: #09090a;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transform: 0.5s;
+        }
+
+        .txt_field input:valid~span,
+        .txt_field input:focus~span {
+            color: rgb(1, 1, 1);
+            font-size: 0.75em;
+            transform: translateY(-34px);
+        }
+
+        .txt_field i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .txt_field input:valid~i,
+        .txt_field input:focus~i {
+            height: 44px;
+        }
+
+        .login_details form .link {
+            display: flex;
+            margin-top:10px ;
+            justify-content: space-between;
+        }
+
+        .login_details form .link a {
+            margin: 10px 0;
+            font-size: 0.90em;
+            color: #2b0be0;
+            text-decoration: none;
+        }
+
+        .login_details form .link a:hover,
+        .login_details form .link a:nth-child(2) {
+            color: rgb(24, 15, 193);
+        }
+
+        .login_details form input[type="Submit"] {
+            border: none;
+            outline: none;
+            padding: 9px 25px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 0.9em;
+            border-radius: 4px;
+            font-weight: 600;
+            width: 100px;
+            margin-top: 10px;
+        }
+
+        .login_details form input[type="Submit"]:active {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login_details">
+        <form id="loginForm" action="/login" method="POST">
+            <h1>Login</h1>
+            <div class="txt_field" id="loginusername">
+                <input type="text" name="username" id="username" required="required">
+                <span>Username</span>
+                <i></i>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="password" name="password" required="required">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <br>
+            <input type="Submit" value="Login">
+            <div class="link">
+                <p>Don't have Accout ?</p>
+                <a href="signup.html">Sign up</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="right-side-content">
+        <img src="https://www.mercedes-benz.com/content/dam/brandhub/assets/vehicles/mercedes-maybach/mercedes-maybach-gls-x167/brandpage/circle/11-2019/images/mercedes-benz-gls-x167-brandhub-brandpage-circle-gallery-01-1350x1010-11-2019.cbv20230517105240.jpg/_jcr_content/renditions/mq5-original-aspect.jpeg">
+        <p>
+            Welcome to our login page! Please enter your username and password to access your account. If you're new here,
+            you can also sign up for an account. If you've forgotten your password, you can use the "Forgot password" link.
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+
+</body>
+
+</html>
